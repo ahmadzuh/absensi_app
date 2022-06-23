@@ -41,7 +41,8 @@ class UpdatePofileView extends GetView<UpdatePofileController> {
                   controller.updateProfile();
                 }
               },
-              child: Text((controller.isLoading.isFalse) ? 'Done' : 'Loading...'),
+              child:
+                  Text((controller.isLoading.isFalse) ? 'Done' : 'Loading...'),
               style: TextButton.styleFrom(
                 primary: AppColor.primary,
               ),
@@ -90,7 +91,9 @@ class UpdatePofileView extends GetView<UpdatePofileController> {
                           height: 98,
                           color: AppColor.primaryExtraSoft,
                           child: Image.network(
-                            (user["avatar"] == null || user['avatar'] == "") ? "https://ui-avatars.com/api/?name=${user['name']}/" : user['avatar'],
+                            (user["avatar"] == null || user['avatar'] == "")
+                                ? "https://ui-avatars.com/api/?name=${user['name']}/"
+                                : user['avatar'],
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -124,13 +127,14 @@ class UpdatePofileView extends GetView<UpdatePofileController> {
           //section 2 - user data
           CustomInput(
             controller: controller.nameC,
-            label: "Full Name",
+            label: "Nama lengkap",
             hint: "Your Full Name",
             margin: EdgeInsets.only(bottom: 16, top: 42),
+            disabled: true,
           ),
           CustomInput(
             controller: controller.employeeidC,
-            label: "Employee ID",
+            label: "Nama Dinas",
             hint: "100000000000",
             disabled: true,
           ),
